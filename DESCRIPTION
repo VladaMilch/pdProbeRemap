@@ -1,0 +1,67 @@
+Package: pdProbeRemap
+Type: Package
+Title: What the package does (short line)
+Version: 0.0.0
+Date: 2016-03-23
+Author: Vladislava Milchevskaya
+Maintainer: Vladislava Milchevskaya <milchv@gmail.com>
+Description: Given original Affymetrix probe grouping and a used-provided
+    reference genome annotation, the package builds new probe groupings in order to
+    meet the original requirements (as unique mappings of probes and existence of
+    enough probes at each probe set). The package provides a chipname.db annotation
+    package, compatible with oligo for further analysis.
+License: Artistic-2.0
+Collate:
+    '00_data.R'
+    '01_FROM_schema.R'
+    '02_FROM_pdInfoBuilder_utils.R'
+    '03_FROM_pdInfoBuilder_main_parcing_functions.R'
+    '04_FROM_pdInfoBuilder_V2NgsExpression.R'
+    '05_FROM_pdBuilder_V2ExonTranscription.R'
+    '05_modified_pdInfoBuilder_parsing_functions.R'
+    '0_DataClasses.R'
+    '10_0_makeOriginalPackageObject.R'
+    '10_1_annotation2fasta.R'
+    '10_2_star_command.R'
+    '1_SAM_read.R'
+    '2_processAlignments.R'
+    '3_annotate.T.alignment.R'
+    '4_filter.T.alignment.R'
+    '5_annotate.G.alignment.R'
+    '6_1_cigar2length.R'
+    '6_2_cigar2_right.R'
+    '6_3_cigar2_left.R'
+    '6_4_annotate.non25M.genomic.transcript_wise.R'
+    '6_getExonExonBorder.R'
+    '7_alignments2probesetsRaw.R'
+    '8_1_addControlProbes.R'
+    '8_cleanProbeSets.R'
+    '90_make_objects_for_reannotation.R'
+    '91_new.R'
+    '92_alignments2parsedData.R'
+    '93_make_package_from_parsedData.R'
+    '94_makeNewAnnotationPackage.R'
+    'utils.R'
+Imports:
+    reshape2,
+    Rsamtools,
+    stringr,
+    seqinr,
+    dplyr,
+    BiocGenerics,
+    IRanges,
+    GenomicRanges,
+    oligo
+Depends:
+    pdInfoBuilder,
+    Biobase,
+Suggests:
+    oligo,
+    knitr,
+    rmarkdown,
+    refGenome,
+    methods,
+    testthat
+VignetteBuilder: knitr
+biocViews: Annotation, Infrastructure
+RoxygenNote: 6.0.1
