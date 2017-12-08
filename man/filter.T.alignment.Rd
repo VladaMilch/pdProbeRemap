@@ -4,7 +4,7 @@
 \alias{filter.T.alignment}
 \title{filter out non-unique transcriptomic mappings}
 \usage{
-\method{filter}{T.alignment}(AT, level)
+filter.T.alignment(AT, level)
 }
 \arguments{
 \item{AT}{annoated transcriptomic alignment, \code{"data.frame"}}
