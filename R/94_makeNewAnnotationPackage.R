@@ -10,6 +10,7 @@
 #' @param min_probe_number numeric, minimal number or probes in a probe set
 #' @param pkgNameSUFFIX character, suffix to the package name, usually starts with dor: '.hereIsYourSuffix'
 #' @param quiet logical
+#' @param fastaDir directory used for generation of the FASTA files
 #' @return a \code{"output type"}.
 #' @seealso \code{function or class name}
 #' @author Vladislava Milchevskaya \email{milchv@gmail.com}
@@ -39,12 +40,13 @@ makeNewAnnotationPackage <- function(alignment.dir,
                                      level,
                                      min_probe_number, 
                                      quiet=FALSE, 
-                                     pkgNameSUFFIX)
+                                     pkgNameSUFFIX, 
+                                     fastaDir)
 {
-    if(!file.exists( file.path(outputDir, "tmpProbesTableDir/seed3.RData")))
-    {stop("outputDir value must be the same that was used to generate FASTA files! \n")}
+    if(!file.exists( file.path(fastaDir, "tmpProbesTableDir/seed3.RData")))
+    {stop("Please provide the directory used to generate fasta files in the previous step (fastaDir). \n")}
     
-    load(file.path(outputDir, "tmpProbesTableDir/seed3.RData"))
+    load(file.path(fastaDir, "tmpProbesTableDir/seed3.RData"))
     new_pd <- makeNewAnnotationPackage_inner(alignment.dir = alignment.dir, 
                                    Annotation = Annotation,
                                    package_seed = seed3,

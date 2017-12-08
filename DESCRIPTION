@@ -43,7 +43,7 @@ Collate:
     '94_makeNewAnnotationPackage.R'
     'utils.R'
 Imports:
-    reshape2,
+    reshape2 (>= 1.4.2),
     Rsamtools,
     stringr,
     seqinr,

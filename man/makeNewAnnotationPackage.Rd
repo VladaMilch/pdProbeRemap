@@ -5,7 +5,7 @@
 \title{What function does (short)}
 \usage{
 makeNewAnnotationPackage(alignment.dir, Annotation, outputDir, level,
-  min_probe_number, quiet = FALSE, pkgNameSUFFIX)
+  min_probe_number, quiet = FALSE, pkgNameSUFFIX, fastaDir)
 }
 \arguments{
 \item{alignment.dir}{path to the directory that contains alignment files}
